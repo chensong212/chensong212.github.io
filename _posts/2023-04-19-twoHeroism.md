@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:     锦衣夜行
+title:     两种英雄主义
 subtitle:   
 date:       2023-04-19
 author:     陈陈
