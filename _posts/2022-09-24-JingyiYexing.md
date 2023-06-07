@@ -14,7 +14,7 @@ tags:
 
 早晨骑单车去沙河地铁站，经过一处工地听到一阵激越悠扬的弦乐声。四周没有什么建筑物，只见路边围起来的挡板露出一个小门。退回去看了一下，门洞里面一个戴着眼镜的中年人，在很投入的拉二胡。
 
-![picture](chensong212.github.io/img/2022-09-24-JingyiYexing.jpg)
+![picture](https://chensong212.github.io/img/2022-09-24-JingyiYexing.jpg)
 
 估计是个看场子的，他就这样在这里自己演奏给自己听。
 
