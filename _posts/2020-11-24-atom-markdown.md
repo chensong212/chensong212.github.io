@@ -7,9 +7,7 @@ author:     陈陈
 header-img:
 catalog: true
 tags:
-    - 笔记
-    - Markdown
-    - Atom
+    - 编程相关
 
 ---
 Markdown是一种纯文本格式的标记语言。它通过简单的标记语法，使得普通文本内容具有一定的格式。
