@@ -7,9 +7,7 @@ author:     陈陈
 header-img: 
 catalog: true
 tags:
-    - 编程
-    - Latex
-    - Atom
+    - 编程相关
 
 ---
 
