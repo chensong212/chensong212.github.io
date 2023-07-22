@@ -7,9 +7,7 @@ author:     陈陈
 header-img: img/Olympiapark_spring1.jpg
 catalog: true
 tags:
-    - 奥林公园
-    - 骑行
-    - 跑步
+    - 旅行见闻
 ---
 
 ###
