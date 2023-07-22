@@ -7,8 +7,7 @@ author:     陈陈
 header-img:
 catalog: true
 tags:
-    - 编程
-    - C++
+    - 编程相关
 
 ---
 
