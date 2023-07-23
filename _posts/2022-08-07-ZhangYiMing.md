@@ -7,8 +7,7 @@ author:     陈陈
 header-img:
 catalog: true
 tags:
-    - 人物
-    - 总结
+    - 随写记录
 
 ---
 
