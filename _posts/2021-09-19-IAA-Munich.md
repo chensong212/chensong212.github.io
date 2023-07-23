@@ -7,8 +7,7 @@ author:     陈陈
 header-img:
 catalog: true
 tags:
-    - 车展
-    - 评论
+    - 随写记录
 
 ---
 
@@ -18,7 +17,7 @@ tags:
 
 图1是从金融时报Youtube频道上截取的一张图，展示了全球三大区域（欧洲、亚洲和美洲）的贸易关系网络。
 
-![picture](https://chenchenx.com/img/IAA2021/f1_trade_network.png)  
+![picture](https://chensong212.github.io/img/IAA2021/f1_trade_network.png)  
     图 1 （来源：Financial Times）
 
 从左至右，三个最重要的节点分别是德国、中国和美国。而这三者当中，中国的体量最大。那么，中国和德国的差距在哪里呢？
@@ -29,7 +28,7 @@ tags:
 * 家具、玩具、杂项制品
 * 鞋靴、伞等轻工产品
 * 纺织品及原料
-![picture](https://chenchenx.com/img/IAA2021/f2_inport.png)  
+![picture](https://chensong212.github.io/img/IAA2021/f2_inport.png)  
     图 2（来源：前瞻产业研究院）
 
 
@@ -38,7 +37,7 @@ tags:
 * 运输设备
 * 机电产品
 
-![picture](https://chenchenx.com/img/IAA2021/f3_export.png)  
+![picture](https://chensong212.github.io/img/IAA2021/f3_export.png)  
     图 3（来源：前瞻产业研究院）
 
 
@@ -79,13 +78,13 @@ tags:
 
 中国是一个幅员辽阔的国家。地理位置和气候条件相差很大，造成不同地区的贫富差距相当悬殊。
 
-![picture](https://chenchenx.com/img/IAA2021/f4_map.jpg)  
+![picture](https://chensong212.github.io/img/IAA2021/f4_map.jpg)  
     图 4（来源：地球旅客）
 
 
 由图4可知，季风分界线大致与400毫米年降水分界线相符。这同时也是农业和畜牧业的分界线。西北将近一半的国土干旱少雨，地形复杂，大多不适宜人类居住。相比之下，德国大部分是平原，降雨充足，自然环境和气候条件都非常友好。
 
-![picture](https://chenchenx.com/img/IAA2021/f5_tax.jpg)  
+![picture](https://chensong212.github.io/img/IAA2021/f5_tax.jpg)  
     图 5（来源：知乎@Widon）
 
 
@@ -135,7 +134,7 @@ tags:
 
 这次车展，除了一些炫酷的外形，并没有看到德系车有多少吸引人的新技术，自动驾驶也没有突破性的进展。没有任何迹象表明，德国车企会在电动车领域取得并保持领先地位。长期以来的安逸日子，形成了惰性和惯性，再难有任正非所说的“啃硬骨头”的动力了。大众汽车"柴油门"丑闻就是一个例子，距曝光近六年了，几天前该案才进入庭审阶段。
 
-![picture](https://chenchenx.com/img/IAA2021/f6_BMW.png)  
+![picture](https://chensong212.github.io/img/IAA2021/f6_BMW.png)  
     图 6（来源：www.statista.com）
 
 
