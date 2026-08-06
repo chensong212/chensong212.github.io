@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      llama + Qwen 模型安装备忘（MacBook Air M5 32G）
+title:      llama + Qwen 模型安装备忘
 subtitle:   编程总结 | 
 date:       2026-08-06
 author:     陈陈
@@ -11,7 +11,7 @@ tags:
 
 ---
 
-# Ollama + Qwen 模型安装备忘（MacBook Air M5 32G）
+## Ollama + Qwen 模型安装备忘（MacBook Air M5 32G）
 
 > 适用：Apple Silicon 原生 arm64，macOS 12+，Homebrew 已装好  
 > 目标：Ollama 跑 qwen3:8b / qwen2.5-coder:14b / qwen3:32b 等，VS Code Continue 调用
@@ -48,15 +48,12 @@ launchctl list | grep ollama   # 确认是否在跑
 
 ## 二、拉取模型
 
-### 你已经装好的
+### 建议安装的（qwen3:14b）
 
 ```bash
+# 测试版（简单对话）
 ollama pull qwen3:8b-q4_K_M
-```
 
-### 现在要装的（qwen3:14b）
-
-```bash
 # 基础版（对话/通用）
 ollama pull qwen3:14b-q4_K_M
 
