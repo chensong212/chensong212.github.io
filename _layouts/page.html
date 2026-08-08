@@ -65,8 +65,8 @@ layout: default
 <!-- USE SIDEBAR -->
     <!-- PostList Container -->
     		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
+                col-lg-8 col-lg-push-4
+                col-md-8 col-md-push-4
                 col-sm-12
                 col-xs-12
                 postlist-container
@@ -75,12 +75,25 @@ layout: default
     		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
+                col-lg-3 col-lg-pull-8
+                col-md-3 col-md-pull-8
                 col-sm-12
                 col-xs-12
                 sidebar-container
             ">
+                <!-- Categories -->
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="{{'/categories/' | prepend: site.baseurl }}">分类</a></h5>
+                    <div class="tags" style="margin-bottom: 20px;">
+                        {% for category in site.categories %}
+                        <a href="{{ site.baseurl }}/categories/#{{ category[0] }}" title="{{ category[0] }}" style="display: block; padding: 8px 12px; margin: 6px 0; background-color: #f9f9f9; border-radius: 4px; color: #444; text-decoration: none; border: 1px solid #e0e0e0; font-size: 14px; font-weight: normal; transition: all 0.2s ease;">
+                            <i class="fa fa-folder-open-o" aria-hidden="true" style="margin-right: 5px; color: #337ab7;"></i> {{ category[0] }} <span class="badge pull-right" style="background-color: #777; font-size: 11px; margin-top: 2px;">{{ category[1].size }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </section>
+
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
                 <section>
