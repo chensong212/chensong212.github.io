@@ -8,9 +8,8 @@ header-img:
 catalog: true
 tags:
     - 编程相关
-
+category: 编程技巧
 ---
-
 ## Ollama + Qwen 模型安装备忘（MacBook Air M5 32G）
 
 > 适用：Apple Silicon 原生 arm64，macOS 12+，Homebrew 已装好  

@@ -1,0 +1,64 @@
+---
+title: 分类
+layout: default
+description: "分类阅读，沉淀知识"
+header-img: "img/tag_jiujiang2019.jpg"
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading" id="tag-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 分类导航 -->
+			<div id='category_cloud' class="tags" style="margin-bottom: 40px; text-align: center;">
+				{% for category in site.categories %}
+				<a href="#{{ category[0] }}" title="{{ category[0] }}" rel="{{ category[1].size }}" style="font-size: 15px; margin: 6px; padding: 6px 16px; border-radius: 20px; background: #f5f5f5; color: #555; display: inline-block; border: 1px solid #e0e0e0; transition: all 0.2s ease;">
+                    <i class="fa fa-folder-o" aria-hidden="true"></i> {{ category[0] }} <span class="badge" style="background-color: #888; margin-left: 5px;">{{ category[1].size }}</span>
+                </a>
+				{% endfor %}
+			</div>
+
+            <!-- 分类列表 -->
+			{% for category in site.categories %}
+			<div class="one-tag-list" style="margin-bottom: 50px;">
+			  	<span class="fa fa-folder-open listing-seperator" id="{{ category[0] }}" style="font-size: 22px; font-weight: bold; display: block; border-bottom: 2px solid #337ab7; padding-bottom: 12px; margin-bottom: 25px; color: #337ab7;">
+                    <span class="tag-text" style="margin-left: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">{{ category[0] }}</span>
+                </span>
+				{% for post in category[1] %}
+				 <div class="post-preview" style="margin-bottom: 20px; padding: 10px 0;">
+				    <a href="{{ post.url | prepend: site.baseurl }}">
+				        <h2 class="post-title" style="font-size: 19px; margin-top: 5px; margin-bottom: 8px; font-weight: 600; line-height: 1.4;">
+                            {{ post.title }}
+				        </h2>
+				        {% if post.subtitle %}
+				        <h3 class="post-subtitle" style="font-size: 14px; font-weight: normal; color: #777; margin-top: 0; margin-bottom: 10px; line-height: 1.4;">
+				            {{ post.subtitle }}
+				        </h3>
+				        {% endif %}
+				    </a>
+                    <p class="post-meta" style="font-size: 12px; color: #999; margin-top: 5px; font-style: italic;">
+                        Posted on {{ post.date | date: "%B %-d, %Y" }}
+                    </p>
+				</div>
+				<hr style="margin-top: 15px; margin-bottom: 15px; border-top: 1px solid #eee;">
+				{% endfor %}
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
