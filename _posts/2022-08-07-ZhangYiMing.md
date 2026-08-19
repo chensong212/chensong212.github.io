@@ -8,7 +8,7 @@ header-img:
 catalog: true
 tags:
     - 随写记录
-category: 一周记事
+category: 散文随笔
 ---
 张一鸣时常在公开场合和年轻人分享自己的成长心得，以下是一些张一鸣对成长中年轻人的建议整理（来自网络）。
 

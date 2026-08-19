@@ -8,7 +8,7 @@ header-img:
 catalog: true
 tags:
     - 科普文章
-category: 科研总结
+category: 科研记录
 ---
 ### 一、背景介绍
 高超声速气体动力学，主要研究飞行器速度远超过声速时流动物理及相关现象，是流体力学的前沿分支。

@@ -8,7 +8,7 @@ header-img:
 catalog: true
 tags:
     - 编程相关
-category: 编程技巧
+category: 科研记录
 ---
 Markdown是一种纯文本格式的标记语言。它通过简单的标记语法，使得普通文本内容具有一定的格式。
 类似LaTex，但Markdown一般以HTML格式发布，主要用以生成网页，如网络日志。

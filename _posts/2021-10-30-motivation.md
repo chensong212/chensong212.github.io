@@ -8,7 +8,7 @@ header-img:
 catalog: true
 tags:
     - 随写记录
-category: 一周记事
+category: 散文随笔
 ---
 最近看了一个b站上的视频。俞敏洪直播中谈如何放过自己，成就未来。
 

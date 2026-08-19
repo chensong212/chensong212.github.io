@@ -8,7 +8,7 @@ header-img: img/Olympiapark_spring1.jpg
 catalog: true
 tags:
     - 旅行见闻
-category: 一周记事
+category: 散文随笔
 ---
 ###
 
