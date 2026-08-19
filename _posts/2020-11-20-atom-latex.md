@@ -8,7 +8,7 @@ header-img:
 catalog: true
 tags:
     - 编程相关
-category: 编程技巧
+category: 科研记录
 ---
 ## 一、Atom 介绍 
 Atom是一款基于GitHub开发的开源跨平台代码编辑器。它具有内置的软件包管理器、嵌入式Git控件、语法突出显示和分屏等常用功能。
