@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      资治通鉴卷五十一、卷五十二阅读笔记
-subtitle:   读书笔记 | 东汉外戚、宦官与清流的权力循环
+title:      资治通鉴阅读笔记26
+subtitle:   卷五十一～卷五十二| 125-45 年
 date:       2026-09-03
 author:     陈陈
 header-img: img/post-bg-coffee.jpeg
