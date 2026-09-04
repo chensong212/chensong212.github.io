@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      资治通鉴阅读笔记26
-subtitle:   卷五十一～卷五十二| 125-45 年
+subtitle:   卷五十一～卷五十二| 125-145 年
 date:       2026-09-03
 author:     陈陈
 header-img: img/post-bg-coffee.jpeg
