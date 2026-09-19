@@ -15,7 +15,7 @@ tags:
 
 ## 1. 背景与原文回顾
 
-近期我们近期拟投稿的一篇英文论文，题为 *“Data-driven modeling of cycle-averaged and phase-resolved aerodynamic responses of a three-dimensional rigid flapping wing”*。初稿完成后，我让学生将论文交给 AI 助手做语言润色，结果 AI 只是机械地替换了几个同义词，完全没有触及根本问题——**摘要写成了参数研究的流水账，Highlights 也与正文贡献脱节**。
+我们近期拟投稿的一篇英文论文，题为 *“Data-driven modeling of cycle-averaged and phase-resolved aerodynamic responses of a three-dimensional rigid flapping wing”*。初稿完成后，我让学生将论文交给 AI 助手做语言润色，结果 AI 只是机械地替换了几个同义词，完全没有触及根本问题——**摘要写成了参数研究的流水账，Highlights 也与正文贡献脱节**。
 
 ### 1.1 初稿摘要（原文）
 
