@@ -4,7 +4,7 @@ title:      从伊萨河到奥林公园
 subtitle:   照片收藏 | 
 date:       2020-12-06
 author:     陈陈
-header-img: img/Olympiapark_spring1.jpg
+header-img: img/Olypark/Olympiapark_spring1.jpg
 catalog: true
 tags:
     - 旅行见闻
