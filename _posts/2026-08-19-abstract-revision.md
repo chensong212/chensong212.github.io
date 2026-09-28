@@ -2,6 +2,7 @@
 layout:     post
 title:      从学生初稿到修改稿：论文摘要修改实录与经验总结
 subtitle:   科研笔记 | 摘要与亮点修改实录：从“参数流水账”到“贡献导向”
+date:       2026-08-19
 author:     陈陈
 header-img: img/post-bg-coffee.jpeg
 catalog: true
