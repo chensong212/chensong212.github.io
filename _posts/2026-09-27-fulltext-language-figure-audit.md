@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      全文排查实录
+title:      论文全文排查实录与常见问题
 subtitle:   学术写作 | 翻译腔、代号与图表陷阱
 date:       2026-09-27
 author:     陈陈
