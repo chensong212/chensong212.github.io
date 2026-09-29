@@ -1,0 +1,92 @@
+---
+layout:     post
+title:      变幅扑翼摘要修改实录
+subtitle:   学术写作 | 从实验流水账到贡献导向
+date:       2026-09-28
+author:     陈陈
+header-img: img/post-bg-coffee.jpeg
+catalog: true
+category: 科研记录
+tags:
+    - 科研笔记
+    - 学术写作
+    - 扑翼气动
+---
+
+编者按：本文记录一次会议论文摘要的修改过程，对象是课题组学生投往某国际会议的一篇扑翼飞行器论文——*A Variable-amplitude Flight Strategy Study for Flapping Wing Aircraft Vehicle*。原稿是典型的"实验记录流水账"：参数堆砌、术语生造、贡献埋没，读三遍仍不知道核心发现是什么。我从结构重组、信息取舍、术语规范和逻辑衔接四个维度做了重构。面向组内学生。
+
+## 一、原稿诊断：把实验记录当成了摘要
+
+下面是学生的原始提交，已去 LaTeX 标记：
+
+> This study presents Aquila-S, a single-drivetrain flapping-wing platform for regulating aerodynamic output and comparing electrical input power under equivalent mean-force constraints. A Pixhawk–STM32G4 architecture supports continuous full-amplitude flapping, low-frequency variable-amplitude flapping, phase-locked gliding, and periodic flap-gliding. Source-code co-simulation evaluated mode scheduling and phase control, while fixed-bench tests assessed aerodynamic forces and electrical input power. Variable-amplitude flapping provided adjustable low-output operation, but repeated drivetrain reversal limited the attainable frequency. Static screening identified θ = −10.0° as the target glide phase for subsequent flap-glide tests. These tests used 3 m/s inflow, a 30° body installation angle, and 3 Hz active flapping. At a 30% glide fraction, cycle periods of 4 and 6 s satisfied the prescribed mean-force tolerances. Relative to continuous flapping, these conditions reduced mean electrical input power by 20.1% and 19.8%, respectively. Force-matched flap-glide operation offers a promising approach to reducing mean electrical input power.
+
+逐句诊断：
+
+| 句 | 问题 |
+| --- | --- |
+| 1 | `single-drivetrain` 不是领域标准术语；`Aquila-S` 项目代号在摘要中不传递信息；核心结论被埋到最后一句 |
+| 2 | 四种模式列举尚可，但缺乏与后文的衔接线索 |
+| 3 | `Source-code co-simulation` 含义模糊，实际是控制器在环仿真 |
+| 4 | 传动反转限制频率是次要发现，出现在摘要中段喧宾夺主 |
+| 5 | `Static screening` 模糊、非核心贡献 |
+| 6–9 | 参数堆砌（3 m/s、30°、3 Hz、4 s、6 s），具体数字 20.1%、19.8% 淹没在细节中 |
+| 10 | 结论笼统，`Force-matched` 术语突兀，且来得太晚 |
+
+> **一份摘要读三遍还不知道贡献是什么——问题不在读者，在作者。**
+
+## 二、结构重组：核心结论放第一句
+
+学术摘要的第一句就应该告诉读者：你做了什么，最核心的结论是什么。原稿把"扑-滑结合可降低功率"埋在最后一句，改后将定性结论（`can significantly reduce`）前置到首句。
+
+后续按"平台→控制→验证→调节机制→实验→量化结果→意义"递进展开。每句话为下一句话搭桥：第二句用 `The prototype` 回指首句；第三句用 `then` 顺承验证步骤；第四句先声明调节能力，为实验做铺垫；第五句定量测试，承接上句。
+
+## 三、做减法：删掉的比保留的更重要
+
+以下信息被删去：
+
+- **`single-drivetrain`**：非标准术语，不是本文贡献，读者不关心。
+- **`Aquila-S` 项目代号**：摘要空间有限，代号不传递信息，正文再提。
+- **`Static screening identified θ = −10.0°`**：这个细节不重要且难以理解。摘要不应被旁支分散注意力。
+- **具体工况参数**：原稿列了 3 m/s、30°、3 Hz、4 s、6 s。摘要不是实验报告——读者若对条件感兴趣会查正文。最终仅保留"30% 滑翔占比"和"约 20% 节能"两个关键数字。
+- **传动反转限制频率**：次要发现，移至正文讨论。
+
+> **做减法比做加法更需要判断力。删掉"自己觉得重要"但读者并不关心的细节，是学术写作的第一道门槛。**
+
+## 四、术语与衔接：让句子"互相对话"
+
+| 原文 | 修改为 | 理由 |
+| --- | --- | --- |
+| `flapping-wing platform` | `flapping-wing prototype` | 准确对应"扑翼机样机" |
+| `Source-code co-simulation` | `Hardware-in-the-loop (HIL) co-simulation platform` | HIL 是领域标准术语 |
+| `flappingwing` / `lowfrequency` | `flapping-wing` / `low-frequency` | 复合形容词须加连字符 |
+| 角度符号混用 | 统一为 `°` | 格式规范 |
+| 句间无连接词 | 回指（`The prototype`）、顺承（`then`）、递进 | 每句为下一句铺路 |
+
+## 五、定稿拆解
+
+> This study develops a variable-amplitude flapping-wing prototype and demonstrates that flap-glide operation can significantly reduce mean electrical input power. The prototype employs a Pixhawk–STM32G4 control architecture that implements four flight modes: continuous full-amplitude flapping, low-frequency variable-amplitude flapping, phase-locked gliding, and periodic flap-gliding. A hardware-in-the-loop (HIL) co-simulation platform is then established to validate the mode scheduling and phase control accuracy. Variable-amplitude flapping adjusts aerodynamic output and mean electrical power via amplitude and frequency modulation. Wind-wall-based fixed-bench tests quantify aerodynamic forces and electrical power under equivalent mean-force constraints. For the selected operating conditions, a 30% glide fraction reduces mean electrical input power by approximately 20% relative to continuous flapping. These results establish flap-glide scheduling as a promising strategy for power-efficient flapping-wing flight.
+
+逐句功能：
+
+| 句 | 功能 | 要点 |
+| --- | --- | --- |
+| 1 | 核心贡献 | `significantly reduce` 定性先行，不堆砌数字 |
+| 2 | 平台能力 | `prototype` 回指首句，冒号引出四种模式 |
+| 3 | 验证手段 | `then` 顺承，明确验证对象是模式调度与相位控制 |
+| 4 | 调节机制 | 声明变幅扑动能力，为实验做铺垫 |
+| 5 | 实验方法 | 风墙台架定量测试 |
+| 6 | 关键结果 | 仅留两个核心数字（30%、~20%），其余工况不列 |
+| 7 | 意义升维 | 收尾有力，点明扑-滑调度是高效飞行策略 |
+
+## 六、给学生的建议
+
+1. **摘要不是缩小版的全文。** 它是一份自给自足的贡献声明——读者不用读正文也应该能说出你做了什么、得到了什么。把所有细节塞进去不等于"信息丰富"，等于"没有重点"。
+2. **做减法的判断力比做加法的勤奋更重要。** 写摘要前的第一件事不是打开正文复制粘贴——而是问自己：如果只能留三个信息点，会是哪三个。其余都删。
+3. **句子之间要有逻辑连接。** 写完一段后，遮住连接词读一遍——如果像实验记录的 bullet points 一样彼此独立，就需要重写。回指、顺承、递进，是让摘要"流动"起来的三件工具。
+
+## 七、结语：摘要不是缩小版的全文
+
+从一份参数堆砌、贡献埋在句末的实验流水账，到一份首句亮贡献、逐句递进的自洽摘要——变的不是英文水平，是信息组织方式。
+
+> **摘要的读者是审稿人和会议听众。他们不关心你的实验细节，只关心三件事：你做了什么、得到了什么、为什么重要。**
