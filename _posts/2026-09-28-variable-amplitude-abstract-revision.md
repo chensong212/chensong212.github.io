@@ -13,11 +13,11 @@ tags:
     - 扑翼气动
 ---
 
-编者按：本文记录一次会议论文摘要的修改过程，对象是课题组学生投往某国际会议的一篇扑翼飞行器论文——*A Variable-amplitude Flight Strategy Study for Flapping Wing Aircraft Vehicle*。原稿是典型的"实验记录流水账"：参数堆砌、术语生造、贡献埋没，读三遍仍不知道核心发现是什么。我从结构重组、信息取舍、术语规范和逻辑衔接四个维度做了重构。面向组内学生。
+编者按：本文记录一次会议论文摘要的修改过程，对象是课题组学生投往某国际会议的一篇扑翼飞行器论文——*A Variable-amplitude Flight Strategy Study for Flapping Wing Aircraft Vehicle*。原稿是典型的"实验记录流水账"：参数堆砌、术语生造、贡献埋没，读三遍仍让人一头雾水。以下从结构重组、信息取舍、术语规范和逻辑衔接四个维度进行修改。
 
 ## 一、原稿诊断：把实验记录当成了摘要
 
-下面是学生的原始提交，已去 LaTeX 标记：
+下面是学生的原始初稿：
 
 > This study presents Aquila-S, a single-drivetrain flapping-wing platform for regulating aerodynamic output and comparing electrical input power under equivalent mean-force constraints. A Pixhawk–STM32G4 architecture supports continuous full-amplitude flapping, low-frequency variable-amplitude flapping, phase-locked gliding, and periodic flap-gliding. Source-code co-simulation evaluated mode scheduling and phase control, while fixed-bench tests assessed aerodynamic forces and electrical input power. Variable-amplitude flapping provided adjustable low-output operation, but repeated drivetrain reversal limited the attainable frequency. Static screening identified θ = −10.0° as the target glide phase for subsequent flap-glide tests. These tests used 3 m/s inflow, a 30° body installation angle, and 3 Hz active flapping. At a 30% glide fraction, cycle periods of 4 and 6 s satisfied the prescribed mean-force tolerances. Relative to continuous flapping, these conditions reduced mean electrical input power by 20.1% and 19.8%, respectively. Force-matched flap-glide operation offers a promising approach to reducing mean electrical input power.
 
@@ -60,7 +60,6 @@ tags:
 | `flapping-wing platform` | `flapping-wing prototype` | 准确对应"扑翼机样机" |
 | `Source-code co-simulation` | `Hardware-in-the-loop (HIL) co-simulation platform` | HIL 是领域标准术语 |
 | `flappingwing` / `lowfrequency` | `flapping-wing` / `low-frequency` | 复合形容词须加连字符 |
-| 角度符号混用 | 统一为 `°` | 格式规范 |
 | 句间无连接词 | 回指（`The prototype`）、顺承（`then`）、递进 | 每句为下一句铺路 |
 
 ## 五、定稿拆解
@@ -85,7 +84,7 @@ tags:
 2. **做减法的判断力比做加法的勤奋更重要。** 写摘要前的第一件事不是打开正文复制粘贴——而是问自己：如果只能留三个信息点，会是哪三个。其余都删。
 3. **句子之间要有逻辑连接。** 写完一段后，遮住连接词读一遍——如果像实验记录的 bullet points 一样彼此独立，就需要重写。回指、顺承、递进，是让摘要"流动"起来的三件工具。
 
-## 七、结语：摘要不是缩小版的全文
+## 七、结语
 
 从一份参数堆砌、贡献埋在句末的实验流水账，到一份首句亮贡献、逐句递进的自洽摘要——变的不是英文水平，是信息组织方式。
 
