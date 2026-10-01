@@ -1,0 +1,69 @@
+/* Academic layout styles for 陈松的个人博客 */
+
+/* Nav */
+.site-nav { background:#fff; border-bottom:1px solid #e6e8ea; position:sticky; top:0; z-index:1000; }
+.site-nav-inner { max-width:1000px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:58px; }
+.site-nav-brand { font-size:17px; font-weight:600; color:#1a2733; text-decoration:none; }
+.site-nav-brand:hover { color:#0f4c81; }
+.site-nav-links { list-style:none; display:flex; gap:22px; align-items:center; margin:0; padding:0; }
+.site-nav-links li { margin:0; }
+.site-nav-links a { text-decoration:none; color:#4a5a68; font-size:14.5px; }
+.site-nav-links a:hover, .site-nav-links a.on { color:#0f4c81; }
+.site-nav-links a.on { font-weight:600; border-bottom:2px solid #0f4c81; padding-bottom:3px; }
+.lang-btn { border:1px solid #0f4c81; color:#0f4c81 !important; padding:4px 13px; border-radius:3px; font-size:13px !important; }
+.lang-btn:hover { background:#0f4c81; color:#fff !important; }
+
+/* Academic layout */
+.academic-wrap { max-width:1000px; margin:0 auto; padding:38px 24px 60px; display:grid; grid-template-columns:230px 1fr; gap:44px; }
+.academic-side { text-align:center; }
+.academic-avatar { width:150px; height:150px; border-radius:50%; background:#e8edf2; margin:0 auto 16px;
+  display:flex; align-items:center; justify-content:center; font-size:52px; color:#0f4c81; border:1px solid #dbe3ea; }
+.academic-name { font-size:19px; color:#1a2733; margin-bottom:4px; }
+.academic-en { font-size:13.5px; color:#7a8a99; margin-bottom:14px; }
+.academic-meta { font-size:13px; color:#5c6b7a; line-height:1.9; text-align:left; }
+.academic-meta b { color:#1a2733; font-weight:600; }
+.academic-contact { margin-top:14px; text-align:left; font-size:13px; color:#5c6b7a; }
+.academic-contact a { color:#0f4c81; text-decoration:none; }
+
+.academic-main { min-width:0; }
+.academic-main h1 { font-size:24px; }
+.academic-quote { font-size:14px; color:#8a97a4; font-style:italic; margin-bottom:26px; padding-left:14px; border-left:3px solid #e0e6ec; }
+.academic-main p { font-size:15.5px; color:#33404d; margin-bottom:14px; line-height:1.85; }
+.academic-main p a { color:#0f4c81; text-decoration:none; }
+.academic-main p a:hover { text-decoration:underline; }
+.academic-sec { font-size:19px; color:#1a2733; font-weight:600; margin:34px 0 14px; padding-bottom:8px; border-bottom:1px solid #e6e8ea; }
+
+/* News */
+.academic-news { list-style:none; padding:0; }
+.academic-news li { display:grid; grid-template-columns:88px 1fr; gap:14px; padding:9px 0; border-bottom:1px dashed #eef1f4; font-size:14.5px; color:#33404d; }
+.academic-news .d { color:#0f4c81; font-size:13px; font-family:ui-monospace,Menlo,monospace; padding-top:2px; }
+.academic-news li.new { background:#f4f9ff; margin:0 -10px; padding:9px 10px; border-radius:4px; border-bottom:1px solid #dceafc; }
+.tag-new { display:inline-block; background:#0f4c81; color:#fff; font-size:10px; padding:1px 6px; border-radius:2px; margin-left:6px; vertical-align:2px; }
+
+/* Publications */
+.academic-pub { padding:14px 0 14px 46px; border-bottom:1px solid #f0f3f5; position:relative; font-size:15px; color:#33404d; }
+.academic-pub-num { position:absolute; left:0; top:14px; font-size:13px; color:#0f4c81; font-family:ui-monospace,Menlo,monospace; }
+.academic-pub-title { font-weight:600; color:#1a2733; }
+.academic-pub-authors { font-size:13.5px; color:#5c6b7a; margin-top:3px; }
+.academic-pub-venue { font-size:13.5px; color:#7a8a99; font-style:italic; margin-top:2px; }
+.pub-tag { display:inline-block; font-size:11px; padding:1px 7px; border-radius:3px; margin-left:6px; vertical-align:1px; }
+.pub-tag-ok { background:#e6f4ea; color:#1e7e34; }
+.pub-tag-sub { background:#fff3cd; color:#856404; }
+
+/* Categories / 博文目录 */
+.academic-chips { margin-bottom:22px; padding-bottom:16px; border-bottom:1px solid #eef1f4; }
+.academic-chip { display:inline-block; font-size:13px; padding:4px 13px; margin:0 7px 7px 0;
+  border:1px solid #dfe5ea; border-radius:14px; color:#5c6b7a; text-decoration:none; background:#fff; }
+.academic-chip:hover { color:#0f4c81; border-color:#0f4c81; }
+.academic-chip-all { background:#0f4c81; color:#fff; border-color:#0f4c81; }
+.academic-cat { font-size:15px; font-weight:600; color:#0f4c81; margin:26px 0 8px; padding-bottom:6px; border-bottom:1px solid #e6e8ea; }
+
+@media (max-width:820px) {
+  .academic-wrap { grid-template-columns:1fr; }
+  .academic-side { margin-bottom:0; }
+  .academic-side .academic-meta, .academic-side .academic-contact { text-align:center; }
+  .site-nav-links { gap:14px; }
+  .site-nav-links a { font-size:13px; }
+  .academic-pub { padding-left:0; }
+  .academic-pub-num { position:static; display:inline-block; margin-right:6px; }
+}
