@@ -13,9 +13,9 @@ tags:
     - 扑翼气动
 ---
 
-编者按：本文记录一次会议论文摘要的修改过程，对象是课题组学生投往某国际会议的一篇扑翼飞行器论文——*A Variable-amplitude Flight Strategy Study for Flapping Wing Aircraft Vehicle*。原稿是典型的"实验记录流水账"，作为导师读完都一头雾水。以下从结构重组、信息取舍、术语规范和逻辑衔接四个维度进行修改。
+编者按：本文记录一次会议论文摘要的修改过程，对象是课题组学生投往某国际会议的一篇扑翼飞行器论文——*A Variable-amplitude Flight Strategy Study for Flapping Wing Aircraft Vehicle*。原稿是典型的"实验记录流水账"，作为导师读完都一头雾水。以下从结构重组、信息取舍等方面进行修改。
 
-## 一、原稿诊断：把实验记录当成了摘要
+## 一、原稿诊断：
 
 下面是学生的原始初稿：
 
@@ -27,17 +27,17 @@ tags:
 | --- | --- |
 | 1 | `single-drivetrain` 不是领域标准术语；`Aquila-S` 项目代号在摘要中不传递信息；核心结论被埋到最后一句 |
 | 2 | 四种模式列举尚可，但缺乏与后文的衔接线索 |
-| 3 | `Source-code co-simulation` 含义模糊，实际是控制器在环仿真 |
-| 4 | 传动反转限制频率是次要发现，出现在摘要中段喧宾夺主 |
-| 5 | `Static screening` 模糊、非核心贡献 |
+| 3 | `Source-code co-simulation` 含义模糊，实际是软件程序在环仿真 |
+| 4 | 传动反转限制频率不是什么优点，在摘要中突出强调没有必要|
+| 5 | `Static screening` 同样含义模糊，读者只能推测其代表的意思 |
 | 6–9 | 参数堆砌（3 m/s、30°、3 Hz、4 s、6 s），具体数字 20.1%、19.8% 淹没在细节中 |
-| 10 | 结论笼统，`Force-matched` 术语突兀，且来得太晚 |
+| 10 | 结论笼统，`Force-matched` 术语突兀，没有顺畅地收尾 |
 
 ## 二、结构重组：核心结论放第一句
 
 学术摘要的第一句就应该告诉读者：你做了什么，最核心的结论是什么。原稿把"扑-滑结合可降低功率"埋在最后一句，改后将定性结论（`can significantly reduce`）前置到首句。
 
-后续按"平台→控制→验证→调节机制→实验→量化结果→意义"递进展开。每句话为下一句话搭桥：第二句用 `The prototype` 回指首句；第三句用 `then` 顺承验证步骤；第四句先声明调节能力，为实验做铺垫；第五句定量测试，承接上句。
+后续按“平台→控制→验证→调节机制→实验→量化结果→意义”逻辑递进展开。每句话为下一句话搭桥：第二句用 `The prototype` 回指首句；第三句用 `then` 顺承验证步骤；第四句先声明调节能力，为实验做铺垫；第五句定量测试，承接上句。
 
 ## 三、做减法：删掉的比保留的更重要
 
@@ -51,18 +51,9 @@ tags:
 
 > **做减法比做加法更需要判断力。删掉"自己觉得重要"但读者并不关心的细节，是学术写作的第一道门槛。**
 
-## 四、术语与衔接：让句子"互相对话"
+## 四、修改稿：
 
-| 原文 | 修改为 | 理由 |
-| --- | --- | --- |
-| `flapping-wing platform` | `flapping-wing prototype` | 准确对应"扑翼机样机" |
-| `Source-code co-simulation` | `Hardware-in-the-loop (HIL) co-simulation platform` | HIL 是领域标准术语 |
-| `flappingwing` / `lowfrequency` | `flapping-wing` / `low-frequency` | 复合形容词须加连字符 |
-| 句间无连接词 | 回指（`The prototype`）、顺承（`then`）、递进 | 每句为下一句铺路 |
-
-## 五、定稿拆解
-
-> This study develops a variable-amplitude flapping-wing prototype and demonstrates that flap-glide operation can significantly reduce mean electrical input power. The prototype employs a Pixhawk–STM32G4 control architecture that implements four flight modes: continuous full-amplitude flapping, low-frequency variable-amplitude flapping, phase-locked gliding, and periodic flap-gliding. A hardware-in-the-loop (HIL) co-simulation platform is then established to validate the mode scheduling and phase control accuracy. Variable-amplitude flapping adjusts aerodynamic output and mean electrical power via amplitude and frequency modulation. Wind-wall-based fixed-bench tests quantify aerodynamic forces and electrical power under equivalent mean-force constraints. For the selected operating conditions, a 30% glide fraction reduces mean electrical input power by approximately 20% relative to continuous flapping. These results establish flap-glide scheduling as a promising strategy for power-efficient flapping-wing flight.
+> This study develops a variable-amplitude flapping-wing prototype and demonstrates that flap-glide operation can significantly reduce mean electrical input power. The prototype employs a Pixhawk–STM32G4 control architecture that implements four flight modes: continuous full-amplitude flapping, low-frequency variable-amplitude flapping, phase-locked gliding, and periodic flap-gliding. A Software-in-the-loop (SITL) co-simulation platform is then established to validate the mode scheduling and phase control accuracy. Variable-amplitude flapping adjusts aerodynamic output and mean electrical power via amplitude and frequency modulation. Wind-wall-based fixed-bench tests quantify aerodynamic forces and electrical power under equivalent mean-force constraints. For the selected operating conditions, a 30% glide fraction reduces mean electrical input power by approximately 20% relative to continuous flapping. These results establish flap-glide scheduling as a promising strategy for power-efficient flapping-wing flight.
 
 逐句功能：
 
@@ -74,16 +65,16 @@ tags:
 | 4 | 调节机制 | 声明变幅扑动能力，为实验做铺垫 |
 | 5 | 实验方法 | 风墙台架定量测试 |
 | 6 | 关键结果 | 仅留两个核心数字（30%、~20%），其余工况不列 |
-| 7 | 意义升维 | 收尾有力，点明扑-滑调度是高效飞行策略 |
+| 7 | 意义提升 | 收尾点明扑-滑调度是高效飞行策略 |
 
-## 六、给学生的建议
+## 五、给学生的建议
 
 1. **摘要不是缩小版的全文。** 它是一份自给自足的贡献声明——读者不用读正文也应该能说出你做了什么、得到了什么。把所有细节塞进去不等于"信息丰富"，等于"没有重点"。
-2. **做减法的判断力比做加法的勤奋更重要。** 写摘要前的第一件事不是打开正文复制粘贴——而是问自己：如果只能留三个信息点，会是哪三个。其余都删。
-3. **句子之间要有逻辑连接。** 写完一段后，遮住连接词读一遍——如果像实验记录的 bullet points 一样彼此独立，就需要重写。回指、顺承、递进，是让摘要"流动"起来的三件工具。
+2. **做减法的判断力比做加法的勤奋更重要。** 写摘要前的第一件事不是打开正文复制粘贴——而是问自己：如果只能留三个信息点，会是哪三个。非关键信息都删减。
+3. **句子之间要有逻辑连接。** 写完一段后，一定要自己多读几遍。如果每句话都彼此独立，只是一股脑地把意思说完了而没有关联和逻辑，就需要重写。多用连接词让句子"流动"起来。
 
-## 七、结语
+## 六、结语
 
-从一份参数堆砌、贡献埋在句末的实验流水账，到一份首句亮贡献、逐句递进的自洽摘要——变的不是英文水平，是信息组织方式。
+我们要学会从读者的角度来思考。对于一篇摘要，绝大多数读者并不关心实验细节，而只关心三件事：你做了什么、得到了什么、为什么重要。
 
-> **摘要的读者是审稿人和会议听众。他们不关心你的实验细节，只关心三件事：你做了什么、得到了什么、为什么重要。**
+做实验、跑仿真、分析数据不是科研的全部，如何展示自己做的工作同样重要。毫不夸张的说，我甚至认为清晰的表达是研究生阶段最应该培养的能力。然而，很多同学往往不注重写论文和口头汇报，这是本末倒置了。

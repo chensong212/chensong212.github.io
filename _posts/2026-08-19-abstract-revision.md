@@ -32,11 +32,11 @@ tags:
 
 ## 2. 核心问题诊断
 
-### 2.1 摘要：参数趋势喧宾夺主
+### 2.1 摘要：给人印象是一堆参数
 
 - **结构失衡**：全文 8 句话中，第 4 句用分号并列了四个单因素趋势（速度、频率、幅度、攻角），占全文近 40% 篇幅。读者读完一半还不知道文章到底做了什么方法创新。
 - **细节过度**：攻角趋势中给出了精确角度范围 “between 7.5° and 10°”，这是正文结果部分的离散数据点，放在摘要中既破坏与其他趋势的详略平衡，又让读者误以为这是普适规律。
-- **语言翻译腔**：大量被动语态（“was conducted”, “were used”）、中式直译（“Along the sampled...”, “establish complementary data-driven routes”）、以及生硬短语（“without a monotonic lift benefit”）。
+- **中文直译痕迹明显**：大量被动语态（“was conducted”, “were used”）、中式直译（“Along the sampled...”, “establish complementary data-driven routes”）、以及生硬短语（“without a monotonic lift benefit”）。
 
 ### 2.2 Highlights：与摘要和正文均不匹配
 
@@ -46,7 +46,7 @@ tags:
 
 ---
 
-## 3. 修改方案：全新摘要与 Highlights
+## 3. 修改方案：
 
 ### 3.1 新摘要（修改版）
 
@@ -54,9 +54,9 @@ tags:
 
 ### 3.2 新 Highlights（修改版）
 
-- **A data-driven framework couples symbolic regression (explicit) and a DNN ensemble (accurate) for flapping-wing aerodynamics.**
-- **Symbolic regression yields a compact mean-lift expression (RMSE 0.0292), trading interpretability against a more accurate Ridge baseline (RMSE 0.0234).**
-- **The DNN ensemble achieves approximately 2% range-normalized RMSE for phase-resolved thrust and lift, with errors increasing from interpolation to frequency extrapolation.**
+- A data-driven framework couples symbolic regression (explicit) and a DNN ensemble (accurate) for flapping-wing aerodynamics.
+- Symbolic regression yields a compact mean-lift expression (RMSE 0.0292), trading interpretability against a more accurate Ridge baseline (RMSE 0.0234).
+- The DNN ensemble achieves approximately 2% range-normalized RMSE for phase-resolved thrust and lift, with errors increasing from interpolation to frequency extrapolation.
 
 ---
 
@@ -79,40 +79,33 @@ tags:
 
 ### 4.2 语言去翻译腔
 
-- **主动语态**：全篇使用 `We develop`, `we establish` 等，避免 `was conducted` 等被动。
-- **动词精准**：`presents` (框架), `develop` (模型), `attains` (精度), `outperforming` (对比), `defining` (边界)。
-- **逻辑连接**：用 `while` (对比 SR 和 Ridge), `thereby` (误差导致边界), `either...or` (选择意义) 等自然衔接。
-- **删减冗余**：去掉 `Here,`, `Along the sampled...`, `creating distinct requirements` 等中式直译。
+- 全篇使用 `We develop`, `we establish` 等，避免 `was conducted` 等被动。
+- `presents` (框架), `develop` (模型), `attains` (精度), `outperforming` (对比), `defining` (边界)。
+- 用 `while` (对比 SR 和 Ridge), `thereby` (误差导致边界), `either...or` (选择意义) 等自然衔接。
+- 去掉 `Here,`, `Along the sampled...`, `creating distinct requirements` 等中式直译。
 
 ### 4.3 Highlights 的同步调整
 
-Highlights 必须与摘要的“贡献导向”一致，且每条应是一个独立、自包含的卖点。
+Highlights 需要与摘要的“贡献导向”一致，且每条应是一个独立、自包含的卖点。
 
 - **第1条**：删除旧亮点1（速度趋势），改为突出**框架双模型结构**，点明“显式 vs 准确”的互补性。
 - **第2条**：保留 SR 的 RMSE 0.0292，但**补入 Ridge 的 0.0234 作为对比**，明确“可解释性-准确性权衡”。
-- **第3条**：将具体数字 1.77–1.80% 改为 **approximately 2%**（只告诉读者大致误差量级），并将误差递增规律（插值→外推）作为边界依据，完全剔除不准确的“explicit validity boundaries”说法。
+- **第3条**：将具体数字 1.77–1.80% 改为 **approximately 2%**（只告诉读者大致误差量级），并将误差递增规律（插值→外推）作为边界依据，剔除不准确的“explicit validity boundaries”说法。
 
 ### 4.4 细节处理原则
 
 - **具体数字**：摘要中保留 SR 和 DNN 的精确 RMSE（因为这是方法性能的核心证据），但 Highlights 中 DNN 精度改用约数，符合“亮点”的概括性要求。
-- **攻角推力-阻力转变**：完全删除 7.5°–10° 这个具体区间，因为这不是文章贡献，且数字过于具体。正文 Results 部分已有完整数据，摘要无需重复。
-- **符号回归的 “frozen”**：改为 `selected`，更准确。
+- **攻角推力-阻力转变**：删除 7.5°–10° 这个具体区间，因为这不是文章贡献，且数字过于具体。正文 Results 部分已有完整数据，摘要无需重复。
 
 ---
 
-## 5. 给学生们的三点写作建议
+## 5. 给学生们的两点写作建议
 
-1. **摘要不是“实验报告”，而是“贡献宣言”**  
-   永远先问自己：如果读者只记住一句话，我希望是哪句？把这句话放在摘要最前面。参数影响、数据细节、符号约定都是支撑材料，能压缩就压缩，能删除就删除。
+1. **摘要不是“实验报告”，而是要告诉别人我做了什么贡献**  
+   先问自己：如果读者只记住一句话，我希望是哪句？把这句话放在摘要最前面。参数影响、数据细节、符号约定都是支撑材料，能压缩就压缩，能删除就删除。
 
 2. **Highlights 是“广告语”，不是“目录”**  
-   每条 Highlight 应该让非专业编辑一眼看懂你的创新点，并愿意点开全文。避免模糊表述（如 “explicit validity boundaries”），用具体对比（如 “trading interpretability against accuracy”）和关键数字（但非全部细节）来支撑。
-
-3. **警惕“翻译腔”的三种典型症状**  
-   - 过度被动语态（尤其 “was conducted/were used”）  
-   - 直译中文连接词（“Along...”, “Based on... we found that”）  
-   - 抽象名词堆砌（“establish complementary data-driven routes”）  
-   修改方法：写完摘要后，大声朗读，如果觉得拗口，就拆成短句或换主动动词。
+   每条 Highlight 应该让非专业编辑一眼看懂创新点，并愿意点开全文。避免模糊表述（如 “explicit validity boundaries”），用具体对比（如 “trading interpretability against accuracy”）和关键数字（但非全部细节）来支撑。
 
 ---
 
