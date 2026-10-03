@@ -12,28 +12,6 @@ title: 关于我
 {% for post in site.posts limit:5 %}
   <li><span class="d">{{ post.date | date: "%Y-%m" }}</span><span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span></li>
 {% endfor %}
-{% assign news_count = 0 %}
-{% for item in site.data.news %}
-  {% assign news_count = news_count | plus: 1 %}
-  <li{% if item.new %} class="new"{% endif %}><span class="d">{{ item.date }}</span><span>{% if item.url != "" %}<a href="{{ item.url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}{% if item.new %} <span class="tag-new">NEW</span>{% endif %}</span></li>
-{% endfor %}
 </ul>
 
 <p style="margin-top:18px;"><a href="{{ site.baseurl }}/categories/#科研记录">更多博文 →</a></p>
-
-<script>
-(function(){
-  var ul=document.querySelector('.academic-news'), items=ul.querySelectorAll('li');
-  if(items.length<=20) return;
-  for(var i=10;i<items.length;i++) items[i].style.display='none';
-  var p=document.createElement('p');
-  p.style.cssText='margin-top:12px;cursor:pointer;color:#0f4c81;font-size:14px;';
-  p.textContent='展开全部 ('+items.length+' 条)';
-  p.onclick=function(){
-    var shown=items[10].style.display!=='none';
-    for(var i=10;i<items.length;i++) items[i].style.display=shown?'none':'';
-    p.textContent=shown?'展开全部 ('+items.length+' 条)':'收起';
-  };
-  ul.parentNode.insertBefore(p,ul.nextSibling);
-})();
-</script>
