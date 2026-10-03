@@ -3,6 +3,7 @@ layout:     post
 title:      变幅扑翼摘要修改实录
 subtitle:   学术写作 | 从实验流水账到贡献导向
 date:       2026-09-28
+permalink:  /2026/09/28/variable-amplitude-abstract-revision/
 author:     陈陈
 header-img: img/post-bg-coffee.jpeg
 catalog: true
