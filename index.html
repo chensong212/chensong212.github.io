@@ -9,15 +9,31 @@ title: 关于我
 
 <h2 class="academic-sec">近期新闻</h2>
 <ul class="academic-news">
-  <li class="new"><span class="d">2026-09</span><span>自制地面接收天线成功解调卫星数据包 <span class="tag-new">NEW</span></span></li>
-  <li><span class="d">2026-06</span><span>学生作品 ABCube（8U 超低轨吸气式电推进立方星）获"翱翔杯"全国立方星及应用创新设计大赛三等奖</span></li>
-  <li><span class="d">2026-03</span><span>带队参访地卫二空间技术（杭州）有限公司</span></li>
-  <li><span class="d">2025-06</span><span>受邀在 ICCES 2026 作学术报告</span></li>
-  <li><span class="d">2025-06</span><span>创立"翼动"飞行器学生协会并担任指导老师</span></li>
-  <li><span class="d">2024-12</span><span>成立仿生智慧飞行实验室</span></li>
-  <li><span class="d">2024-07</span><span>赴北京航空航天大学杭州国际校园全职工作</span></li>
-  <li><span class="d">2022-02</span><span>任北京航空航天大学副教授</span></li>
-  <li><span class="d">2021-12</span><span>完成洪堡基金会资助项目</span></li>
-  <li><span class="d">2021-11</span><span>在 Göttingen STAB 会议上作口头报告</span></li>
-  <li><span class="d">2019-03</span><span>获亚历山大·冯·洪堡奖学金</span></li>
+{% for post in site.posts limit:5 %}
+  <li><span class="d">{{ post.date | date: "%Y-%m" }}</span><span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span></li>
+{% endfor %}
+{% assign news_count = 0 %}
+{% for item in site.data.news %}
+  {% assign news_count = news_count | plus: 1 %}
+  <li{% if item.new %} class="new"{% endif %}><span class="d">{{ item.date }}</span><span>{% if item.url != "" %}<a href="{{ item.url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}{% if item.new %} <span class="tag-new">NEW</span>{% endif %}</span></li>
+{% endfor %}
 </ul>
+
+<p style="margin-top:18px;"><a href="{{ site.baseurl }}/categories/#科研记录">更多博文 →</a></p>
+
+<script>
+(function(){
+  var ul=document.querySelector('.academic-news'), items=ul.querySelectorAll('li');
+  if(items.length<=20) return;
+  for(var i=10;i<items.length;i++) items[i].style.display='none';
+  var p=document.createElement('p');
+  p.style.cssText='margin-top:12px;cursor:pointer;color:#0f4c81;font-size:14px;';
+  p.textContent='展开全部 ('+items.length+' 条)';
+  p.onclick=function(){
+    var shown=items[10].style.display!=='none';
+    for(var i=10;i<items.length;i++) items[i].style.display=shown?'none':'';
+    p.textContent=shown?'展开全部 ('+items.length+' 条)':'收起';
+  };
+  ul.parentNode.insertBefore(p,ul.nextSibling);
+})();
+</script>

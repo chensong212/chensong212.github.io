@@ -8,12 +8,20 @@ title: 博文目录
 
 <div class="academic-chips">
   <a href="{{ site.baseurl }}/categories/" class="academic-chip academic-chip-all">全部</a>
-  {% for category in site.categories %}
-  <a href="{{ site.baseurl }}/categories/#{{ category[0] }}" class="academic-chip">{{ category[0] }} <span style="opacity:.65;font-size:11px;">{{ category[1].size }}</span></a>
+  {% assign cat_order = "科研记录,读书笔记,散文随笔,一周记事" | split: "," %}
+  {% for cat_name in cat_order %}
+    {% for category in site.categories %}
+      {% if category[0] == cat_name %}
+        <a href="{{ site.baseurl }}/categories/#{{ category[0] }}" class="academic-chip">{{ category[0] }} <span style="opacity:.65;font-size:11px;">{{ category[1].size }}</span></a>
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 </div>
 
-{% for category in site.categories %}
+{% assign cat_order = "科研记录,读书笔记,散文随笔,一周记事" | split: "," %}
+{% for cat_name in cat_order %}
+  {% for category in site.categories %}
+    {% if category[0] == cat_name %}
 <div class="academic-cat" id="{{ category[0] }}">{{ category[0] }}</div>
 {% for post in category[1] %}
 <div style="display:grid;grid-template-columns:78px 1fr;gap:14px;padding:8px 0;border-bottom:1px dashed #f0f3f5;">
@@ -24,4 +32,6 @@ title: 博文目录
   </span>
 </div>
 {% endfor %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}
