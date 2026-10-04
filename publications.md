@@ -108,5 +108,3 @@ title: 论文发表
 <div style="border-bottom:1px solid #e6e8ea;padding-bottom:4px;margin:28px 0 20px;">
   <strong style="font-size:15px;color:#0f4c81;">2025 及更早</strong>
 </div>
-
-<p style="color:#8a97a4;font-size:14px;">（2016 年博士以来的高超声速、DSMC、仿生气动方向论文待补充。如需，可提供 <code>.bib</code> 文件自动渲染。）</p>
