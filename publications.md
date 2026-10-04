@@ -14,7 +14,7 @@ title: 论文发表
   <div class="academic-pub-num">[1]</div>
   <div>
     <div class="academic-pub-title">Scaling laws with hand-wing index and application to flapping-wing vehicle design software</div>
-    <div class="academic-pub-authors">Guo Y, Wang S, Chen S, Hong G</div>
+    <div class="academic-pub-authors">Guo Y, Wang S, Chen S<sup>*</sup>, Hong G</div>
     <div class="academic-pub-venue">Bioinspiration &amp; Biomimetics, 21(1), 2026 <span class="pub-tag pub-tag-ok">已发表</span></div>
   </div>
 </div>
@@ -23,7 +23,7 @@ title: 论文发表
   <div class="academic-pub-num">[2]</div>
   <div>
     <div class="academic-pub-title">A data-driven flight optimization of two-segment flapping-wing aircraft based on deep learning</div>
-    <div class="academic-pub-authors">Gan C, Chen S, Ye Z, Hong G</div>
+    <div class="academic-pub-authors">Gan C, Chen S<sup>*</sup>, Ye Z, Hong G</div>
     <div class="academic-pub-venue">Theoretical and Applied Mechanics Letters, 16(1), 2026 <span class="pub-tag pub-tag-ok">已发表</span></div>
   </div>
 </div>
@@ -32,7 +32,7 @@ title: 论文发表
   <div class="academic-pub-num">[3]</div>
   <div>
     <div class="academic-pub-title">Speed-Dependent Control Effectiveness Analysis of a Flapping-Wing Aerial Vehicle</div>
-    <div class="academic-pub-authors">Guo Y, Chen J, Chen S, Hong G</div>
+    <div class="academic-pub-authors">Guo Y, Chen J, Chen S<sup>*</sup>, Hong G</div>
     <div class="academic-pub-venue">AIAA Journal, 2026 <span class="pub-tag pub-tag-sub">在投</span></div>
   </div>
 </div>
@@ -41,7 +41,7 @@ title: 论文发表
   <div class="academic-pub-num">[4]</div>
   <div>
     <div class="academic-pub-title">Data-driven modeling of cycle-averaged and phase-resolved aerodynamic responses of a three-dimensional rigid flapping wing</div>
-    <div class="academic-pub-authors">作者名单待定</div>
+    <div class="academic-pub-authors">Xu J, Zhang J, Chen S<sup>*</sup>, Hong G</div>
     <div class="academic-pub-venue">Theoretical and Applied Mechanics Letters <span class="pub-tag pub-tag-sub">修改中</span></div>
   </div>
 </div>
@@ -50,7 +50,7 @@ title: 论文发表
   <div class="academic-pub-num">[5]</div>
   <div>
     <div class="academic-pub-title">A Variable-amplitude Flight Strategy Study for Flapping Wing Aircraft Vehicle</div>
-    <div class="academic-pub-authors">作者名单待定</div>
+    <div class="academic-pub-authors">Cheng J, Guo Y, Chen S<sup>*</sup>, Hong G</div>
     <div class="academic-pub-venue">国际会议 <span class="pub-tag pub-tag-sub">修改中</span></div>
   </div>
 </div>
