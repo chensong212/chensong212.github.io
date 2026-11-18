@@ -56,10 +56,7 @@ tags:
 
 ### 2. 云端重量级推理层（SCNet）
 *   **后端支撑**：无须自行维护服务器，直接通过 SCNet 官方提供的 Token 计费大模型 API。
-*   **云端模型**：
-    *   `DeepSeek-V4-Pro`（深度推理/长文本）：用于学术论文评审、申请书纠错。
-    *   `Qwen3-30B`（中文写作/学术）：用于方案大纲构建、PPT 和课件文本修改。
-    *   `SCNet-Max`（平台旗舰）：用于复杂多步骤的自主 Agent 任务。
+*   **云端模型**：以 `/v1/models` 接口返回的实际可用 ID 为准（截至本文更新时为 `DeepSeek-V4.1-Flash-1017`）。模型 ID 会随版本迭代更换，配置里写死旧 ID 会直接报 `422`。
 *   **计费模式**：**严格按 Token（实际生成字数）扣费**，5000 元的 Token 预算足够单人高频使用数年，性价比极高。
 
 ---
@@ -83,20 +80,21 @@ llm-pi-ai:
       api: "openai-completions"
       apiKeyEnv: "SCNET_API_KEY"
       baseURL: "https://api.scnet.cn/api/llm/v1"
+      compat:
+        thinkingFormat: deepseek   # pi-ai 不认识的 baseURL，必须声明推理方言
       models:
-        - id: "DeepSeek-V4-Pro"   # ⚠️ 注意：大小写必须严格匹配
-          name: "DeepSeek V4 Pro (深度推理/长文本)"
-          contextWindow: 131072
-        - id: "Qwen3-30B"         # ⚠️ 注意：大小写必须严格匹配
-          name: "Qwen3 30B (中文写作/学术)"
-          contextWindow: 131072
-        - id: "SCNet-Max"         # ⚠️ 注意：大小写必须严格匹配
-          name: "SCNet Max (平台旗舰/最强Agent)"
+        - id: "DeepSeek-V4.1-Flash-1017"   # 以 /v1/models 返回为准
+          name: "DeepSeek V4.1 Flash 1017"
           contextWindow: 131072
 ```
 
 ### ⚠️ 踩坑提示：大小写敏感（Case-Sensitive）
-在首次连接时，如果配置的模型 ID 为小写（如 `deepseek-v4-pro`），系统会抛出 `422 (Model Not Exist)` 错误。**SCNet 官方 API 接口是严格区分大小写的**。必须填入包含首字母大写的标准 ID（如 `DeepSeek-V4-Pro`、`Qwen3-30B`）。
+以下两种情况都会抛出 `422 (Model Not Exist)`：
+
+1. **大小写写错**：如 `deepseek-v4-pro`，接口严格区分大小写；
+2. **模型 ID 已下线**：官方会给模型更换版本后缀（如 `DeepSeek-V4-Pro` → `DeepSeek-V4-Pro-0813`）。
+
+**配置前先调 `/v1/models` 拿实际 ID，不要照抄旧博客或旧配置。**
 
 ---
 
@@ -117,6 +115,75 @@ dsh web
 
 打开浏览器访问 `http://localhost:5173`，在左上角的模型选择菜单中，直接切换到 **“SCNet (云端大模型)”**，即可享受超算算力提供的重型大模型推理。
 
+密钥有有效期。到期后按下一节流程更新即可。
+
+---
+
+## 🔑 密钥到期后：改两处，验三步
+
+SCNet 的 API 密钥有有效期。到期后所有云端调用返回 `401/403`，本地 Ollama 不受影响。更新时最常见的失误是**只改了环境变量，忘了 Continue 里那份明文密钥**。
+
+> **密钥有两个消费方：DSH 读环境变量，Continue 读明文配置。只改一处，另一半继续报错。**
+
+### 改哪两处
+
+| 位置 | 内容 | 使用者 |
+|------|------|--------|
+| `~/.zshrc` | `export SCNET_API_KEY="sk-..."` | DeepSeek Harness |
+| `~/.continue/config.yaml` | `apiKey: sk-...`（明文） | VS Code Continue |
+
+`~/.dsh/settings.yaml` **不用改**——它写的是 `apiKeyEnv: "SCNET_API_KEY"`，只引用变量名，值换了自动生效。
+
+### 用剪贴板替换，避免密钥进入 shell 历史
+
+先在 SCNet 控制台复制新密钥，再在终端执行：
+
+```zsh
+NEWKEY="$(pbpaste | tr -d ' \n\r')"
+
+if [[ "$NEWKEY" == sk-* ]]; then
+  sed -i '' "s|^export SCNET_API_KEY=.*|export SCNET_API_KEY=\"${NEWKEY}\"|" ~/.zshrc
+  sed -i '' "s|^\( *\)apiKey: sk-.*|\1apiKey: \"${NEWKEY}\"|" ~/.continue/config.yaml
+  unset NEWKEY
+  source ~/.zshrc
+  echo "已更新，前缀 ${SCNET_API_KEY:0:6}"
+else
+  echo "剪贴板内容不是 sk- 开头的密钥，未做修改"
+fi
+```
+
+> **不要用 `read -s NEWKEY` 交互粘贴。** `-s` 模式不显示提示符，密钥极易被粘到同一行变成 `read -s NEWKEY sk-xxx=`，zsh 会直接报 `not an identifier`。剪贴板读取没有这个风险。
+
+### 生效与验证
+
+1. 停掉 `dsh web` 后重新启动——环境变量只在进程启动时读取；
+2. VS Code 执行 `Cmd+Shift+P` → `Developer: Reload Window`；
+3. 先验证密钥本身：
+
+```zsh
+curl -s https://api.scnet.cn/api/llm/v1/models \
+  -H "Authorization: Bearer $SCNET_API_KEY" | head -c 300
+```
+
+返回模型列表即密钥有效。再验证模型是否真的可调：
+
+```zsh
+curl -s -w "\nHTTP %{http_code}\n" https://api.scnet.cn/api/llm/v1/chat/completions \
+  -H "Authorization: Bearer $SCNET_API_KEY" -H "Content-Type: application/json" \
+  -d '{"model":"DeepSeek-V4.1-Flash-1017","messages":[{"role":"user","content":"hi"}],"max_tokens":8}'
+```
+
+### 错误码对照
+
+| 返回 | 含义 | 处理 |
+|------|------|------|
+| `200` | 正常 | — |
+| `401 / 403` | 密钥无效或无权限 | 重新生成，确认绑定项目 |
+| `402 Insufficient Balance` | **该模型**额度不足 | 在控制台为该模型开通额度 |
+| `422 Model Not Exist` | 模型 ID 不存在 | 用 `/v1/models` 查实际 ID |
+
+> **`/v1/models` 能列出模型，不代表有额度。** SCNet 的额度按模型分账，必须逐个实测。
+
 ---
 
 ## 🎯 科研实战场景展示
@@ -125,11 +192,11 @@ dsh web
 
 ### 场景一：基金/项目申请书的精细化修改
 *   **痛点**：自己写的申请书容易逻辑闭环不强，或学术表达不够精炼。
-*   **工作流**：在 Harness 中加载云端 **`DeepSeek-V4-Pro`**。Harness 自动读取您的申请书 Markdown 文件，模型利用极强的长文本逻辑能力，从“立项依据-研究内容-关键科学问题”的多维契合度输出深度的全局修改建议。
+*   **工作流**：在 Harness 中加载云端模型。Harness 自动读取您的申请书 Markdown 文件，模型利用极强的长文本逻辑能力，从“立项依据-研究内容-关键科学问题”的多维契合度输出深度的全局修改建议。
 
 ### 场景二：学术 PPT 与课件快速大纲提炼
 *   **痛点**：要把繁琐的论文内容转化为通俗直观的课件 PPT，手动提炼耗时耗力。
-*   **工作流**：使用 **`Qwen3-30B`**。输入您的论文全文，命令 Harness 自动调用格式工具提炼核心逻辑，生成结构化的 Markdown 课件草稿，进一步一键转换为 PPT 文档。
+*   **工作流**：使用云端模型。输入您的论文全文，命令 Harness 自动调用格式工具提炼核心逻辑，生成结构化的 Markdown 课件草稿，进一步一键转换为 PPT 文档。
 
 ---
 
