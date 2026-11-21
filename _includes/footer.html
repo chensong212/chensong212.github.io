@@ -125,6 +125,20 @@
             .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
     }
 </script>
+{% else %}
+<!-- PWA 已关闭：主动注销历史遗留的 Service Worker 并清空其缓存 -->
+<script type="text/javascript">
+    if(navigator.serviceWorker && navigator.serviceWorker.getRegistrations){
+        navigator.serviceWorker.getRegistrations().then(function(regs){
+            regs.forEach(function(r){ r.unregister(); });
+            if(window.caches && caches.keys){
+                caches.keys().then(function(keys){
+                    keys.forEach(function(k){ caches.delete(k); });
+                });
+            }
+        });
+    }
+</script>
 {% endif %}
 
 
