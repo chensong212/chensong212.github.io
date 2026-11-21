@@ -22,6 +22,8 @@
 .academic-en { font-size:13.5px; color:#7a8a99; margin-bottom:14px; }
 .academic-meta { font-size:13px; color:#5c6b7a; line-height:1.9; text-align:left; }
 .academic-meta b { color:#1a2733; font-weight:600; }
+.academic-meta a { color:#0f4c81; text-decoration:none; border-bottom:1px dotted #9db8cf; }
+.academic-meta a:hover { color:#0a3861; border-bottom-color:#0f4c81; }
 .academic-contact { margin-top:14px; text-align:left; font-size:13px; color:#5c6b7a; }
 .academic-contact a { color:#0f4c81; text-decoration:none; }
 
