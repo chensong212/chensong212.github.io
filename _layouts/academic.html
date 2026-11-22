@@ -11,10 +11,12 @@ layout: default
       <b>副教授</b><br>
       北京航空航天大学<br>
       杭州国际校园<br><br>
+      {% if page.url == '/' or page.url == '/index.html' %}
       <div class="academic-qr">
         <img src="{{ site.baseurl }}/img/lab-wechat-qrcode.jpg" alt="仿生智慧飞行实验室公众号二维码" width="110" height="110" loading="lazy">
         <span>实验室公众号</span>
       </div>
+      {% endif %}
       <b><a href="https://chensong212.github.io/bio-flight-lab/" target="_blank" rel="noopener">仿生智慧飞行实验室</a></b><br>
       <a href="https://chensong212.github.io/bio-flight-lab/" target="_blank" rel="noopener">Bio-inspired Intelligent Flight Lab</a>
     </div>
